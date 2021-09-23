@@ -20,7 +20,16 @@ export default {
           'Discover latest crypto and altcoin social media news and insights'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-743Z3VZKT6',
+        async: true
+      },
+      {
+        src: '/js/ganalytics.js'
+      }
+    ]
   },
   /*
    ** Global CSS

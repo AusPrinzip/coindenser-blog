@@ -10,7 +10,7 @@
       />
       <div class="overlay"></div>
       <div class="absolute top-32 left-32 text-white">
-        <NuxtLink to="/"><Logo /></NuxtLink>
+        <!-- <NuxtLink to="/" class="mt-16 -mb-3"><Logo /></NuxtLink> -->
         <div class="mt-16 -mb-3 flex uppercase text-sm">
           <p class="mr-3">
             {{ formatDate(article.updatedAt) }}
@@ -34,7 +34,7 @@
           to="/"
           class="mr-8 self-center text-white font-bold hover:underline"
         >
-          All articles
+          Home
         </NuxtLink>
         <AppSearchInput />
       </div>
