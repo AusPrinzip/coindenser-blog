@@ -48,6 +48,7 @@
       </li>
     </ul>
     <footer class="flex justify-center border-gray-500 border-t-2">
+      <CookieControl locale="en" />
       <p class="mt-4">
         Created by
         <a
@@ -76,6 +77,9 @@ export default {
       articles,
       tags
     }
+  },
+  mounted() {
+    // this.$cookies.modal = true
   }
 }
 </script>

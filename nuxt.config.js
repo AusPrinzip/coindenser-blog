@@ -20,16 +20,7 @@ export default {
           'Discover latest crypto and altcoin social media news and insights'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      {
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-743Z3VZKT6',
-        async: true
-      },
-      {
-        src: '/js/ganalytics.js'
-      }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Global CSS
@@ -69,8 +60,50 @@ export default {
    */
   modules: [
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+    // https://www.npmjs.com/package/nuxt-cookie-control
+    'nuxt-cookie-control'
   ],
+
+  cookies: {
+    necessary: [
+      {
+        // if multilanguage
+        name: {
+          en: 'Default Cookies'
+        },
+        description: {
+          en: 'Used for cookie control.'
+        },
+        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+      }
+    ],
+    optional: [
+      {
+        name: 'Google Analitycs',
+        // if you don't set identifier, slugified name will be used
+        identifier: 'ga',
+        // if multilanguage
+        description: {
+          en: 'Google GTM is ...'
+        },
+
+        initialState: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-743Z3VZKT6',
+        async: true,
+        cookies: ['_ga', '_gat', '_gid'],
+        accepted: () => {
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+          })
+        },
+        declined: () => {}
+      }
+    ]
+  },
+
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration

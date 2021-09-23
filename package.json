@@ -23,6 +23,7 @@
   "dependencies": {
     "@nuxt/content": "^1.11.1",
     "nuxt": "^2.14.12",
+    "nuxt-cookie-control": "^1.9.8",
     "prism-themes": "1.5.0"
   },
   "devDependencies": {
