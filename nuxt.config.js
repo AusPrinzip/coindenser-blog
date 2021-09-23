@@ -94,10 +94,12 @@ export default {
         cookies: ['_ga', '_gat', '_gid'],
         accepted: () => {
           window.dataLayer = window.dataLayer || []
-          window.dataLayer.push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-          })
+          function gtag() {
+            window.dataLayer.push(arguments)
+          }
+          gtag('js', new Date())
+
+          gtag('config', 'G-743Z3VZKT6')
         },
         declined: () => {}
       }
