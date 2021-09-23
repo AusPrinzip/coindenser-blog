@@ -11,15 +11,7 @@
       >
         <NuxtLink
           :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-          class="
-            flex
-            transition-shadow
-            duration-150
-            ease-in-out
-            shadow-sm
-            hover:shadow-md
-            xxlmax:flex-col
-          "
+          class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
         >
           <img
             v-if="article.img"
@@ -48,14 +40,7 @@
       >
         <NuxtLink :to="`/blog/tag/${tag.slug}`" class="">
           <p
-            class="
-              font-bold
-              text-gray-600
-              uppercase
-              tracking-wider
-              font-medium
-              text-ss
-            "
+            class="font-bold text-gray-600 uppercase tracking-wider font-medium text-ss"
           >
             {{ tag.name }}
           </p>

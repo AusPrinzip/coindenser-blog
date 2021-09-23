@@ -47,6 +47,14 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss'
   ],
+
+  eslint: {
+    fix: true
+  },
+
+  stylelint: {
+    fix: true
+  },
   /*
    ** Nuxt.js modules
    */
@@ -61,7 +69,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css'
+        theme: 'prism-themes/themes/prism-hopscotch.css'
       }
     },
     nestedProperties: ['author.name']
