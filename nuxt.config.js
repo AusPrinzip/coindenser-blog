@@ -9,7 +9,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: 'coindenser | latest social media news for crypto',
+    title: 'coindenser | latest altcoins price predictions',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,7 +17,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Discover latest crypto and altcoin social media news and insights'
+          'Discover latest crypto price predictions and altcoin social media news'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
