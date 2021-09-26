@@ -1,6 +1,6 @@
 ---
 title: crypto crash china
-description: Analysis on social media factors
+description: Nothing is too big to fall
 img: /stormseeker-rX12B5uX7QM-unsplash.jpg
 alt: nice image
 author:
