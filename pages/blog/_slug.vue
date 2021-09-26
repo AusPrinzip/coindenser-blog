@@ -114,7 +114,7 @@ export default {
   },
   head() {
     return {
-      title: this.article.title,
+      title: `coindenser blog post | ${this.article.title}`,
       meta: [
         {
           hid: 'description',

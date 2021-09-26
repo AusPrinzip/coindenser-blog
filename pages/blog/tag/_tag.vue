@@ -81,6 +81,18 @@ export default {
       tag
     }
   },
+  head() {
+    return {
+      title: `${this.tag} category description`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Discover all related articles to the ${this.tag} tag`
+        }
+      ]
+    }
+  },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }

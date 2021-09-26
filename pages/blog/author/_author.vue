@@ -65,6 +65,7 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
+    const author = params.author
     const articles = await $content('articles')
       .where({
         'author.name': {
@@ -75,7 +76,20 @@ export default {
       .sortBy('createdAt', 'asc')
       .fetch()
     return {
-      articles
+      articles,
+      author
+    }
+  },
+  head() {
+    return {
+      title: `Blog author description`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Discover all articles from ${this.author}`
+        }
+      ]
     }
   },
   methods: {
