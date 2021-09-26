@@ -78,8 +78,17 @@ export default {
       tags
     }
   },
-  mounted() {
-    // this.$cookies.modal = true
+  head() {
+    return {
+      title:
+        'coindenser | Discover bullrun altcoins price predictions and signals',
+      meta: {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Discover latest crypto price predictions and altcoin social media news'
+      }
+    }
   }
 }
 </script>

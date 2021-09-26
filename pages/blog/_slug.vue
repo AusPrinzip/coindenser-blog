@@ -97,10 +97,25 @@ export default {
       next
     }
   },
+  head() {
+    return {
+      title: this.article.title,
+      meta: {
+        hid: 'description',
+        name: 'description',
+        content: `Crypto news about ${this.tagsToString()}`
+      }
+    }
+  },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
+    },
+    tagstoString() {
+      let string = ''
+      this.article.tags.forEach((tag) => (string += `,${tag} `))
+      return string
     }
   }
 }
