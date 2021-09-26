@@ -90,32 +90,44 @@ export default {
       .sortBy('createdAt', 'asc')
       .surround(params.slug)
       .fetch()
+
+    // stringTag
+    let stringTag = ''
+    for (let i = 0; i < article.tags.length; i++) {
+      const tag = article.tags[i]
+      if (i === 0) {
+        stringTag += `${tag} `
+      } else if (i === article.tags.length - 1) {
+        stringTag += `and ${tag}.`
+      } else {
+        stringTag += `${tag}, `
+      }
+    }
+
     return {
       article,
       tags,
       prev,
-      next
+      next,
+      stringTag
     }
   },
   head() {
     return {
       title: this.article.title,
-      meta: {
-        hid: 'description',
-        name: 'description',
-        content: `Crypto news about ${this.tagsToString()}`
-      }
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Crypto news about ${this.stringTag}`
+        }
+      ]
     }
   },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
-    },
-    tagstoString() {
-      let string = ''
-      this.article.tags.forEach((tag) => (string += `,${tag} `))
-      return string
     }
   }
 }
