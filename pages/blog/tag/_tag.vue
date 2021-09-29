@@ -83,12 +83,12 @@ export default {
   },
   head() {
     return {
-      title: `${this.tag} category description`,
+      title: this.tag.description,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `Discover all related articles to the ${this.tag} tag`
+          content: `Discover all related articles to the ${this.tag.name} tag`
         }
       ]
     }

@@ -81,7 +81,7 @@ export default {
   head() {
     return {
       title:
-        'coindenser | Discover bullrun altcoins price predictions and signals',
+        'coindenser | One-stop for altcoins price predictions and crypto signals',
       meta: [
         {
           hid: 'description',
